@@ -12,7 +12,7 @@
     const date = new Date();
     date.setTime(date.getTime() + 2592000000); // 30 days in milliseconds
     const expires = "; expires=" + date.toUTCString();
-    const domain = "; domain=.ondigitalocean.app; path=/;Secure; SameSite=None"
+    const domain = "; domain=ondigitalocean.app; path=/;Secure; SameSite=None"
     document.cookie = name + "=" + (value || "") + expires + domain + ";";
   };
 
