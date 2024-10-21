@@ -28,10 +28,6 @@
     return value;
   };
 
-  const extractOrderIdFromUrl = (url) => {
-    const match = url.match(/track\/(\d+)/);
-    return match ? match[1] : null;
-  };
 
   function onLoadCallback() {
     const params = new URLSearchParams(window.location.search);
@@ -45,7 +41,7 @@
     const headerKeys = [{ key: 'oem', apiKey: 'X-API-KEY' }];
 
     // Extract orderId from the specific URL and set in cookie
-    const orderId = extractOrderIdFromUrl(window.location.href); // Using window.location.href for dynamic URL
+    const orderId = params.get('orderId');
     if (orderId) {
       glance_SetCookie('gl_order_id', orderId);
     }
