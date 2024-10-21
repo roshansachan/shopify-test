@@ -12,7 +12,7 @@
     const date = new Date();
     date.setTime(date.getTime() + 2592000000); // 30 days in milliseconds
     const expires = "; expires=" + date.toUTCString();
-    document.cookie = name + "=" + (value || "") + expires + ";";
+    document.cookie = name + "=" + (value || "") + expires + "; Secure; SameSite=None;";
   };
 
   const glance_PostDetails = async (url, headers) => {
